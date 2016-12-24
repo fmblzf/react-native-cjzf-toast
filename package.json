@@ -1,25 +1,25 @@
 {
-  "name": "react-native-toast",
-  "version": "1.0.0",
-  "description": "react native toast plugin androi&ios",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fmblzf/react-native-toast.git"
-  },
-  "keywords": [
-    "toast",
-    "react-native",
-    "android",
-    "ios"
-  ],
-  "author": "fmblzf",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fmblzf/react-native-toast/issues"
-  },
-  "homepage": "https://github.com/fmblzf/react-native-toast#readme"
+    "name": "react-native-toast",
+    "version": "1.0.0",
+    "description": "react native toast plugin androi&ios",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fmblzf/react-native-cjzf-toast.git"
+    },
+    "keywords": [
+        "toast",
+        "react-native",
+        "android",
+        "ios"
+    ],
+    "author": "fmblzf",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fmblzf/react-native-cjzf-toast/issues"
+    },
+    "homepage": "https://github.com/fmblzf/react-native-cjzf-toast#readme"
 }

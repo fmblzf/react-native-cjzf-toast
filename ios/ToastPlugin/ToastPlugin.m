@@ -181,7 +181,7 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)options)
 {
     NSString *text_ = options[@"message"];
     if (!text_) {
-        return;
+        text_ = @"";
     }
     CGFloat duration_ = options[@"duration"]?[options[@"duration"] floatValue]:DEFAULT_DISPLAY_DURATION;
     NSString *location = options[@"location"]?:@"bottom";
