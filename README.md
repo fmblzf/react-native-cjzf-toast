@@ -1,4 +1,4 @@
-# react-native-toast
+# react-native-cjzf-toast
 实现IOS和Android对应弹出土司的兼容模块
 # Android&IOS 使用
  (1) 安装插件，使用命令：
