@@ -147,9 +147,11 @@ RCT_EXPORT_MODULE(ToastPlugin);
 
 + (void)showWithText:(NSString *)text_ duration:(CGFloat)duration_
 {
-    ToastPlugin *toast = [[ToastPlugin alloc] initWithText:text_];
-    [toast setDuration:duration_];
-    [toast show];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ToastPlugin *toast = [[ToastPlugin alloc] initWithText:text_];
+        [toast setDuration:duration_];
+        [toast show];
+    });
 }
 
 + (void)showWithText:(NSString *)text_ topOffset:(CGFloat)topOffset_
@@ -159,9 +161,11 @@ RCT_EXPORT_MODULE(ToastPlugin);
 
 + (void)showWithText:(NSString *)text_ topOffset:(CGFloat)topOffset_ duration:(CGFloat)duration_
 {
-    ToastPlugin *toast = [[ToastPlugin alloc] initWithText:text_];
-    [toast setDuration:duration_];
-    [toast showFromTopOffset:topOffset_];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ToastPlugin *toast = [[ToastPlugin alloc] initWithText:text_];
+        [toast setDuration:duration_];
+        [toast showFromTopOffset:topOffset_];
+    });
 }
 
 + (void)showWithText:(NSString *)text_ bottomOffset:(CGFloat)bottomOffset
@@ -171,9 +175,11 @@ RCT_EXPORT_MODULE(ToastPlugin);
 
 + (void)showWithText:(NSString *)text_ bottomOffset:(CGFloat)bottomOffset_ duration:(CGFloat)duration
 {
-    ToastPlugin *toast = [[ToastPlugin alloc] initWithText:text_];
-    [toast setDuration:duration];
-    [toast showFromBottomOffset:bottomOffset_];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ToastPlugin *toast = [[ToastPlugin alloc] initWithText:text_];
+        [toast setDuration:duration];
+        [toast showFromBottomOffset:bottomOffset_];
+    });
 }
 
 //React Native 调用的js方法
@@ -184,6 +190,9 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)options)
         text_ = @"";
     }
     CGFloat duration_ = options[@"duration"]?[options[@"duration"] floatValue]:DEFAULT_DISPLAY_DURATION;
+    if (duration_ > 3.5f) {
+        duration_ = 3.5f;
+    }
     NSString *location = options[@"location"]?:@"bottom";
     if([location isEqualToString:@"center"]){
         [ToastPlugin showWithText:text_ duration:duration_];
